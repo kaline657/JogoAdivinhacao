@@ -1,7 +1,5 @@
-package jogo;
-
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
 public class JogoAdivinhacao {
     public static void main(String[] args) {
@@ -10,30 +8,36 @@ public class JogoAdivinhacao {
 
         int numeroSecreto = random.nextInt(100) + 1;
         int tentativa;
-        int tentativas = 0;
+        int tentativasRestantes = 5;
 
         System.out.println("=== BEM-VINDO AO JOGO DE ADIVINHAÇÃO ===");
-        System.out.println("Tente adivinhar o número entre 1 e 100");
+        System.out.println("Você tem 5 tentativas para acertar o número entre 1 e 100");
+        System.out.println("Boa sorte!");
 
-        do {
+        while (tentativasRestantes > 0) {
             System.out.print("Digite seu palpite: ");
             tentativa = scanner.nextInt();
-            tentativas++;
+            tentativasRestantes--;
 
             if (tentativa < numeroSecreto) {
-                System.out.println("Muito baixo! Tente novamente.");
+                System.out.println("Muito baixo!");
             } else if (tentativa > numeroSecreto) {
-                System.out.println("Muito alto! Tente novamente.");
+                System.out.println("Muito alto!");
             } else {
-                System.out.printf("Parabéns! Você acertou em %d tentativas!\n", tentativas);
+                System.out.printf("Parabéns! Você acertou o número secreto com %d tentativa(s) restante(s)!\n", tentativasRestantes);
+                break;
             }
 
-        } while (tentativa != numeroSecreto);
+            if (tentativasRestantes > 0) {
+                System.out.printf("Tentativas restantes: %d\n", tentativasRestantes);
+            } else {
+                System.out.printf("Suas tentativas acabaram! O número secreto era: %d\n", numeroSecreto);
+            }
+        }
+
+        System.out.println("Obrigado por jogar!");
+        System.out.println("=== FIM DO JOGO ===");
 
         scanner.close();
     }
 }
-
-
-
-
