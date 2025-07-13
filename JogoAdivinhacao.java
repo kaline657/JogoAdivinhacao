@@ -33,6 +33,7 @@ public class JogoAdivinhacao {
         scanner.close();
     }
 }
+System.out.println("Obrigado por jogar!");
 
 
 
