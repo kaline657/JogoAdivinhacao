@@ -12,6 +12,7 @@ public class JogoAdivinhacao {
 
         System.out.println("=== BEM-VINDO AO JOGO DE ADIVINHAÇÃO ===");
         System.out.println("Você tem 5 tentativas para acertar o número entre 1 e 100");
+        System.out.println("Boa sorte!");
 
         while (tentativasRestantes > 0) {
             System.out.print("Digite seu palpite: ");
@@ -40,10 +41,3 @@ public class JogoAdivinhacao {
         scanner.close();
     }
 }
-
-
-
-
-
-
-
